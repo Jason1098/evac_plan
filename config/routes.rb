@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :muster_locations
+
   resources :employees
 
   root :to => "visitors#index"
