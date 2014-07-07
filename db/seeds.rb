@@ -7,3 +7,9 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
+
+MusterLocation.delete_all
+MusterLocation.create!(:name => 'Muster Area 1')
+MusterLocation.create!(:name => 'Muster Area 2')
+
+
