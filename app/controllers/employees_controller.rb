@@ -22,6 +22,11 @@ class EmployeesController < ApplicationController
   def edit
   end
 
+  def import  
+    Employee.import(params[:file])  
+    redirect_to root_url, notice: "Employees Imported."  
+  end  
+
   # POST /employees
   # POST /employees.json
   def create

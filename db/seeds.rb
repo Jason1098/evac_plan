@@ -9,7 +9,7 @@ user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 
 MusterLocation.delete_all
-MusterLocation.create!(:name => 'Muster Area 1')
-MusterLocation.create!(:name => 'Muster Area 2')
+MusterLocation.create!(:name => 'Muster Area 1', :number => '1')
+MusterLocation.create!(:name => 'Muster Area 2', :number => '2')
 
 
