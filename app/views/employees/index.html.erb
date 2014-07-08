@@ -2,20 +2,28 @@
   <div class="row">
     <h3>Employees</h3>
     <div class="column">
-      <table class="table">
+      <table class="table table-hover">
         <tbody>
-          <% @employees.each do |employee| %>
-            <tr>
-              <%= render employee %>
-            </tr>
-          <% end %>
+          <th>Name</th>
+          <th>Badge Number</th>
+          <th>Gender</th>
+              
+            <% @employees.each do |employee| %>
+              <tr>
+                <%= render employee %>
+              </tr>
+            <% end %>
         </tbody>
       </table>
     </div>
   </div>
 </div>
-<h2>Import Employees</h2>  
- <%= form_tag import_employees_path, multipart: true do %>  
-   <%= file_field_tag :file %>  
-   <%= submit_tag "Import" %>  
- <% end %>  
+<div class="container">
+  <div class="row">
+     <h2>Import Employees</h2>  
+        <%= form_tag import_employees_path, multipart: true do %>  
+        <%= file_field_tag :file %>  
+        <%= submit_tag "Import" %>  
+      <% end %> 
+    </div>
+  </div>
