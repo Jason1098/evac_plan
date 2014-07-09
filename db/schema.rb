@@ -16,15 +16,18 @@ ActiveRecord::Schema.define(version: 20140708223944) do
   create_table "employees", force: true do |t|
     t.string   "first_name"
     t.string   "last_name"
-    t.integer  "primary_location_id"
-    t.integer  "secondary_location_id"
     t.integer  "badge"
+    t.string   "gender"
+    t.integer  "location_id"
     t.integer  "department_id"
     t.integer  "muster_location_id"
-    t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
+  add_index "employees", ["location_id"], name: "index_employees_on_location_id"
+  add_index "employees", ["muster_location_id"], name: "index_employees_on_muster_location_id"
 
   create_table "locations", force: true do |t|
     t.integer  "number"

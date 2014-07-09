@@ -1,6 +1,6 @@
 class Employee < ActiveRecord::Base
 	belongs_to :muster_location
-	has_many :locations
+	belongs_to :location
 
 	def full_name
   		"#{self.first_name} #{self.last_name}"
