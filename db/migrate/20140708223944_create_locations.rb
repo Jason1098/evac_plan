@@ -3,7 +3,7 @@ class CreateLocations < ActiveRecord::Migration
     create_table :locations do |t|
       t.integer :number
       t.string :name
-      t.integer :building
+      t.references :building, index: true
 
       t.timestamps
     end
