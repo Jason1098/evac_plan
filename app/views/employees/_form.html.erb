@@ -4,11 +4,11 @@
   <div class="form-inputs">
     <%= f.input :first_name %>
     <%= f.input :last_name %>
-    <%= f.input :location_id, collection: @locations %>
+    <%= f.association :location %>
     <%= f.input :badge %>
     <%= f.input :department_id %>
-    <%= f.input :muster_location_id, collection: @muster_locations %>
-    <%= f.input :gender %>
+    <%= f.association :muster_location %>
+    <%= f.input :gender, collection: [:Male, :Female] %>
   </div>
 
   <div class="form-actions">

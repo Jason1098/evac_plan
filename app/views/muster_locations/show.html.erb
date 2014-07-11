@@ -5,5 +5,21 @@
   <%= @muster_location.name %>
 </p>
 
+<table class="table table-hover">
+				<tbody>
+					<th>Name</th>
+					<th>Badge Number</th>
+					<th>Gender</th>
+					<th>Primary Location</th>
+					<th>Muster Area</th>
+												
+						<% @employees.each do |employee| %>
+							<tr>
+								<%= render employee %>
+							</tr>
+						<% end %>
+				</tbody>
+			</table>
+
 <%= link_to 'Edit', edit_muster_location_path(@muster_location) %> |
 <%= link_to 'Back', muster_locations_path %>

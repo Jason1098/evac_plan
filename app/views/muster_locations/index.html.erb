@@ -1,25 +1,20 @@
-<h1>Listing muster_locations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @muster_locations.each do |muster_location| %>
-      <tr>
-        <td><%= muster_location.name %></td>
-        <td><%= link_to 'Show', muster_location %></td>
-        <td><%= link_to 'Edit', edit_muster_location_path(muster_location) %></td>
-        <td><%= link_to 'Destroy', muster_location, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<div class="container">
+	<div class="row">
+		<h3>Muster Locations</h3>
+		<div class="column">
+			<table class="table table-hover">
+				<tbody>
+					<th>Number</th>
+					<th>Name</th>
+						<% @muster_locations.each do |muster_location| %>
+							<tr>
+								<%= render muster_location %>
+							</tr>
+						<% end %>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 
 <%= link_to 'New Muster location', new_muster_location_path %>
