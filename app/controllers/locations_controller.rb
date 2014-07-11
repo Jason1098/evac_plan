@@ -15,10 +15,12 @@ class LocationsController < ApplicationController
   # GET /locations/new
   def new
     @location = Location.new
+    @buildings = Building.all
   end
 
   # GET /locations/1/edit
   def edit
+    @buildings = Building.all
   end
 
   # POST /locations

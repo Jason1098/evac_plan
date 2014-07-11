@@ -12,7 +12,7 @@
 
 <p>
   <strong>Building:</strong>
-  <%= @location.building %>
+  <%= @location.building.name if @location.building %>
 </p>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
