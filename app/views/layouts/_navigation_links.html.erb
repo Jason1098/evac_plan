@@ -4,6 +4,8 @@
   <li><%= link_to 'Employees', employees_path %></li>
   <li><%= link_to 'Muster Location', muster_locations_path %></li>
   <li><%= link_to 'Location', locations_path %></li>
+  <li><%= link_to 'Buildings', buildings_path %></li>
+ 
   <li><%= link_to 'Sign out', destroy_user_session_path, :method=>'delete' %></li>
 <% else %>
   <li><%= link_to 'Sign in', new_user_session_path %></li>
