@@ -10,6 +10,7 @@ class DepartmentsController < ApplicationController
   # GET /departments/1
   # GET /departments/1.json
   def show
+    @employees = Department.find(params[:id]).employees
   end
 
   # GET /departments/new
@@ -56,7 +57,7 @@ class DepartmentsController < ApplicationController
   def destroy
     @department.destroy
     respond_to do |format|
-      format.html { redirect_to departments_url, notice: 'Department was successfully destroyed.' }
+      format.html { redirect_to departments_url, notice: 'Department was successfully deleted.' }
       format.json { head :no_content }
     end
   end

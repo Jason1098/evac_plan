@@ -1,20 +1,20 @@
 <div class="container">
-	<div class="row">
-		<h3>Muster Locations</h3>
-		<div class="column">
-			<table class="table table-hover">
-				<tbody>
-					<th>Number</th>
-					<th>Name</th>
-						<% @muster_locations.each do |muster_location| %>
-							<tr>
-								<%= render muster_location %>
-							</tr>
-						<% end %>
-				</tbody>
-			</table>
-		</div>
-	</div>
+  <div class="row">
+    <h3>Muster Locations</h3>
+    <div class="column">
+      <table class="table table-hover">
+        <tbody>
+          <th>Number</th>
+          <th>Name</th>
+            <% @muster_locations.each do |muster_location| %>
+              <tr>
+                <%= render muster_location %>
+              </tr>
+            <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>
 
 <%= link_to 'New Muster location', new_muster_location_path %>

@@ -1,14 +1,27 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Number:</strong>
-  <%= @department.number %>
-</p>
-
-<p>
   <strong>Name:</strong>
   <%= @department.name %>
 </p>
+
+<table class="table table-hover">
+  <tbody>
+    <th>Name</th>
+    <th>Badge Number</th>
+    <th>Gender</th>
+    <th>Primary Location</th>
+    <th>Department</th>
+    <th>Muster Area</th>
+                        
+      <% @employees.each do |employee| %>
+        <tr>
+          <%= render employee %>
+        </tr>
+      <% end %>
+        
+  </tbody>
+</table>
 
 <%= link_to 'Edit', edit_department_path(@department) %> |
 <%= link_to 'Back', departments_path %>
