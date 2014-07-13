@@ -1,4 +1,5 @@
 class MusterLocationsController < ApplicationController
+  before_filter :authenticate_user!
   before_action :set_muster_location, only: [:show, :edit, :update, :destroy]
 
   # GET /muster_locations
