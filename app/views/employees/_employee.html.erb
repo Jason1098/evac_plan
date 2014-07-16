@@ -1,10 +1,9 @@
 
-<td><%= link_to employee.full_name, employee %></td>
+<td><%= link_to employee.last_first_name, employee %></td>
 <td><%= employee.badge %></td>
 <td><%= employee.gender %></td>
-<td><%= employee.dob %></td>
-<td><%= employee.active %></td>
-<td><%= employee.location.name if employee.location %></td>
-<td><%= employee.department.name if employee.department %>
+<td><%= employee.age %></td>
+<td><%= employee.location.location_name if employee.location %></td>
+<td><%= employee.department.department_name if employee.department %>
 <td><%= employee.muster_location.name if employee.muster_location %></td>
 <td><%= employee.emergency_contact_id %></td>

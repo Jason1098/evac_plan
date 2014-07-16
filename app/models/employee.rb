@@ -7,6 +7,10 @@ class Employee < ActiveRecord::Base
         "#{self.first_name} #{self.last_name}"
     end
 
+  def last_first_name
+        "#{self.last_name}, #{self.first_name}"
+  end
+
     #def self.import(file)  
      #  CSV.foreach(file.path, headers: true) do |row|  
      #  Employee.create! row.to_hash  
@@ -27,5 +31,10 @@ class Employee < ActiveRecord::Base
         e.save!
       end
     end  
+
+  def age
+    now = Time.now.utc.to_date
+    now.year - self.dob.year - ((now.month > self.dob.month || (now.month == self.dob.month && now.day >= self.dob.day)) ? 0 : 1)
+  end
 
 end
