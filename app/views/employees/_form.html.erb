@@ -6,10 +6,10 @@
     <%= f.input :last_name %>
     <%= f.input :dob, as: :date, start_year: Date.today.year - 80,
                           end_year: Date.today.year - 18, order: [:month, :day, :year] %>
-    <%= f.input :active, in_line_label: true %>
-    <%= f.association :location %>
+    <%= f.input :active %>
+    <%= f.association :location, label_method: :location_name, order: :id %>
     <%= f.input :badge %>
-    <%= f.association :department %>
+    <%= f.association :department, label_method: :department_name %>
     <%= f.association :muster_location %>
     <%= f.input :gender, collection: [:Male, :Female] %>
     <%= f.input :emergency_contact_id %>

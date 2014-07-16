@@ -48,7 +48,7 @@ Location.create!(number: '106', name: 'Office', building_id: "#{Building.find_by
 Location.create!(number: '107', name: 'Office', building_id: "#{Building.find_by(number: '1').id}")
 Location.create!(number: '108', name: 'Office', building_id: "#{Building.find_by(number: '1').id}")
 Location.create!(number: '109', name: 'Office', building_id: "#{Building.find_by(number: '1').id}")
-Location.create!(number: '110', name: 'North Lab Assyemply', building_id: "#{Building.find_by(number: '1').id}")
+Location.create!(number: '110', name: 'North Lab Assembly', building_id: "#{Building.find_by(number: '1').id}")
 Location.create!(number: '112', name: 'North Lab Electronics', building_id: "#{Building.find_by(number: '1').id}")
 Location.create!(number: '113', name: 'Overmold Lab', building_id: "#{Building.find_by(number: '1').id}")
 Location.create!(number: '118', name: 'Office', building_id: "#{Building.find_by(number: '1').id}")
