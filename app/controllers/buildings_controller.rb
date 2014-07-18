@@ -11,6 +11,7 @@ class BuildingsController < ApplicationController
   # GET /buildings/1
   # GET /buildings/1.json
   def show
+    @locations = Building.find(params[:id]).locations
   end
 
   # GET /buildings/new

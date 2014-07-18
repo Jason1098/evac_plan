@@ -18,7 +18,7 @@ class Employee < ActiveRecord::Base
 
     def self.import(file)  
         CSV.foreach(file.path, headers: true) do |row|  
-        e = Employee.new
+        e = Employee.find_by_badge(row[2]) || Employee.new
         e.last_name = row[0]
         e.first_name = row[1] 
         e.badge = row[2]

@@ -1,5 +1,5 @@
 class Location < ActiveRecord::Base
-    belongs_to :employee
+    has_many :employees
     belongs_to :building
 
   def location_name

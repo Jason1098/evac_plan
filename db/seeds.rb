@@ -10,7 +10,7 @@ puts 'CREATED ADMIN USER: ' << user.email
 
 #the following seed data is needed for the application
 MusterLocation.delete_all
-MusterLocation.create!(name: 'Muster Area 1', number: '1')
+MusterLocation.create!(name: 'Muster Area One', number: '1')
 MusterLocation.create!(name: 'Muster Area 2', number: '2')
 puts 'Muster Locations Created'
 
@@ -94,12 +94,4 @@ Location.create!(number: '350', name: 'Mach Shop - Plasma', building_id: "#{Buil
 
 puts 'Locations Created '
 
-
-# the seed data below is for testing
-
-Employee.delete_all
-Employee.create(first_name: 'Jason', last_name: 'Bush', badge: '347', gender: 'Male', muster_location_id: "#{MusterLocation.find_by(number: '2').id}", location_id: "#{Location.find_by(number: '302').id}", department_id: '11')
-Employee.create!(:first_name => 'John', :last_name => 'Doe', :badge => '123', :gender => 'M', :muster_location_id => '1', :location_id => '2', :department_id => '1')
-
-puts 'Employees Created'
 

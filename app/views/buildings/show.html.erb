@@ -8,7 +8,18 @@
 <p>
   <strong>Name:</strong>
   <%= @building.name %>
-</p>
+<table class="table table-hover">
+  <tbody>
+    <th>Name</th>
+    <th>Number</th>
+                        
+      <% @locations.each do |location| %>
+        <tr>
+          <%= render location %>
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
 
 <%= link_to 'Edit', edit_building_path(@building) %> |
 <%= link_to 'Back', buildings_path %>

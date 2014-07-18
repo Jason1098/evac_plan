@@ -11,7 +11,7 @@ class MusterLocationsController < ApplicationController
   # GET /muster_locations/1
   # GET /muster_locations/1.json
   def show
-    @employees = MusterLocation.find(params[:id]).employees
+    @employees = MusterLocation.find(params[:id]).employees.order(:last_name)
   end
 
   # GET /muster_locations/new

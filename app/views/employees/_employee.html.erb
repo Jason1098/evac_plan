@@ -1,9 +1,11 @@
 
+
+
 <td><%= link_to employee.last_first_name, employee %></td>
 <td><%= employee.badge %></td>
 <td><%= employee.gender %></td>
 <td><%= employee.age %></td>
-<td><%= employee.location.location_name if employee.location %></td>
-<td><%= employee.department.department_name if employee.department %>
-<td><%= employee.muster_location.name if employee.muster_location %></td>
+<td><%= link_to employee.location.location_name, location_path(employee.location) if employee.location %></td>
+<td><%= link_to employee.department.department_name, department_path(employee.department) if employee.department %>
+<td><%= link_to employee.muster_location.name, muster_location_path(employee.muster_location) if employee.muster_location %></td>
 <td><%= employee.emergency_contact_id %></td>

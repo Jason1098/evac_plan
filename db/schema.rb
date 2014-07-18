@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20140711104220) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "buildings", force: true do |t|
     t.integer  "number"
     t.string   "name"
@@ -42,9 +45,9 @@ ActiveRecord::Schema.define(version: 20140711104220) do
     t.datetime "updated_at"
   end
 
-  add_index "employees", ["department_id"], name: "index_employees_on_department_id"
-  add_index "employees", ["location_id"], name: "index_employees_on_location_id"
-  add_index "employees", ["muster_location_id"], name: "index_employees_on_muster_location_id"
+  add_index "employees", ["department_id"], name: "index_employees_on_department_id", using: :btree
+  add_index "employees", ["location_id"], name: "index_employees_on_location_id", using: :btree
+  add_index "employees", ["muster_location_id"], name: "index_employees_on_muster_location_id", using: :btree
 
   create_table "locations", force: true do |t|
     t.integer  "number"
@@ -54,7 +57,7 @@ ActiveRecord::Schema.define(version: 20140711104220) do
     t.datetime "updated_at"
   end
 
-  add_index "locations", ["building_id"], name: "index_locations_on_building_id"
+  add_index "locations", ["building_id"], name: "index_locations_on_building_id", using: :btree
 
   create_table "muster_locations", force: true do |t|
     t.string   "name"
@@ -80,7 +83,7 @@ ActiveRecord::Schema.define(version: 20140711104220) do
     t.integer  "role"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

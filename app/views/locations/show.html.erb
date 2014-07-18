@@ -1,19 +1,26 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Number:</strong>
-  <%= @location.number %>
-</p>
+<h3><%=  @location.building.name if @location.building%>  </h3>
+<h4> <%= @location.number %> - <%= @location.name %>  -   People Assigned: <%= @location.employees.count %> </h4>
 
-<p>
-  <strong>Name:</strong>
-  <%= @location.name %>
-</p>
-
-<p>
-  <strong>Building:</strong>
-  <%= @location.building.name if @location.building %>
-</p>
+  
+<table class="table table-hover">
+  <tbody>
+    <th>Name</th>
+    <th>Badge Number</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Primary Location</th>
+    <th>Department</th>
+    <th>Muster Area</th>
+                        
+      <% @employees.each do |employee| %>
+        <tr>
+          <%= render employee %>
+        </tr>
+      <% end %>
+        </tbody>
+      </table>
 
 <%= link_to 'Edit', edit_location_path(@location) %> |
 <%= link_to 'Back', locations_path %>
+

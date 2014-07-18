@@ -2,7 +2,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @muster_location.name %>
+  <%= @muster_location.name %>  -  Employees: <%= @muster_location.employees.count %>
 </p>
 
 <table class="table table-hover">
@@ -11,7 +11,6 @@
     <th>Badge Number</th>
     <th>Gender</th>
     <th>Age</th>
-    <th>Active?</th>
     <th>Primary Location</th>
     <th>Department</th>
     <th>Muster Area</th>
